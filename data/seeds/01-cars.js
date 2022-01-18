@@ -10,7 +10,7 @@ exports.seed = function (knex) {
              make: '1983 Chevrolet',
              model: '10 series',
              mileage: 104000,
-             title: 'C K',
+             title: 'clean',
              transmission: 'auto'
           },
           {
@@ -19,7 +19,7 @@ exports.seed = function (knex) {
              make: '1993 Acura',
              model: 'Legend',
              mileage: 100900,
-             title: 'C K',
+             title: 'clean',
              transmission: 'auto'
           },
           {
@@ -28,6 +28,7 @@ exports.seed = function (knex) {
              make: '1992 Buick',
              model: 'Century',
              mileage: 210000,
+             title: 'salvage',
              transmission: 'auto'
           },
        ]);
