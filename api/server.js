@@ -4,6 +4,14 @@ const server = express()
 const carsRouter = require('./cars/cars-router')
 
 // DO YOUR MAGIC
+server.use(express.json())
 server.use('/api/cars', carsRouter)
+
+server.get('/', (err, req, res, next)=>{ // eslint-disable
+   res.status(err.status || 500).json({
+      message: err.message,
+      stack: err.stack
+   });
+});
 
 module.exports = server
