@@ -5,6 +5,9 @@ const Car = require('./cars-model')
 
 const {
    checkCarId,
+   checkCarPayload,
+   checkVinNumberValid,
+   checkVinNumberUnique,
 } = require('./cars-middleware')
 
 router.get('/', async (req, res, next)=>{
@@ -23,9 +26,8 @@ router.get('/:id', checkCarId, (req, res, next)=>{
    }
 });
 
-router.post('/', async (req, res, next)=>{
+router.post('/', checkCarPayload, async (req, res, next)=>{
    const newCar = await Car.create( req.body )
-   // console.log(newCar)
    try{
       res.json( newCar )
    } catch(err){
