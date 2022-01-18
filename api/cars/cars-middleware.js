@@ -28,11 +28,9 @@ const checkCarPayload = (req, res, next) => {
       missing.push('model')
     } if ( !vin ){
       missing.push('vin')
-      // req.missing = 'vin'
     } if ( !mileage ){
       missing.push( 'mileage' )
     }
-    // console.log(missing)
     return next({ status: 400, message: `${missing} is missing`})
   } else {
     next()
@@ -45,11 +43,8 @@ const checkVinNumberUnique = async (req, res, next) => {
   const dbVin = await Car.getByVin(vin)
   try{
     if ( dbVin ){
-      // console.log(`dbVin exists`, dbVin)
       next({ status: 400, message: `vin ${dbVin.vin} already exists`})
     } else{
-      // console.log(`dbVin dne`, dbVin)
-      // req.newVin = dbVin
       next()
     }
   }catch(err){
