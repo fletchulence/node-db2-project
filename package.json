@@ -4,9 +4,12 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
-    "migrate": "knex migrate:up",
-    "rollback": "knex migrate:down",
-    "resetdb": "knex rollback",
+    "up": "knex migrate:up",
+    "down": "knex migrate:down",
+    "rollback": "knex migrate:rollback",
+    "latest": "knex migrate:latest",
+    "seed": "knex seed:run",
+    "resetdb": "npm run rollback && npm run latest && npm run seed",
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand"
   },
   "devDependencies": {
@@ -14,6 +17,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.4.1",
     "jest": "^27.4.4",
+    "knex-cleaner": "^1.3.1",
     "nodemon": "^2.0.15",
     "supertest": "^6.1.6"
   },
