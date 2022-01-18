@@ -18,6 +18,8 @@ const checkCarId = async (req, res, next) => {
 
 const checkCarPayload = (req, res, next) => {
   // DO YOUR MAGIC
+//   const { make, model, }
+//   if ()
 }
 
 const checkVinNumberValid = (req, res, next) => {
