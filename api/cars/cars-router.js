@@ -26,7 +26,11 @@ router.get('/:id', checkCarId, (req, res, next)=>{
    }
 });
 
-router.post('/', checkCarPayload, async (req, res, next)=>{
+router.post('/', 
+checkCarPayload, 
+checkVinNumberUnique, 
+checkVinNumberValid,
+async (req, res, next)=>{
    const newCar = await Car.create( req.body )
    try{
       res.json( newCar )
