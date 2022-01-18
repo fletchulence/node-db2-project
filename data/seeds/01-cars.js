@@ -1,34 +1,34 @@
 // STRETCH
 
 exports.seed = function (knex) {
-   return knex('cars').del()
+   return knex('cars').truncate()
    .then(function () {
       return knex('cars').insert([
           {
             //  car_id: 1,
-             car_vin: '1GCDC14H5DS161081',
-             car_make: '1983 Chevrolet',
-             car_model: '10 series',
-             car_mileage: 104000,
-             car_title: 'C K',
-             car_transmission: 'auto'
+             vin: '1GCDC14H5DS161081',
+             make: '1983 Chevrolet',
+             model: '10 series',
+             mileage: 104000,
+             title: 'C K',
+             transmission: 'auto'
           },
           {
-            //  car_id: 2,
-             car_vin: 'JH4KA7556PC018027',
-             car_make: '1993 Acura',
-             car_model: 'Legend',
-             car_mileage: 100900,
-             car_title: 'C K',
-             car_transmission: 'auto'
+            //  id: 2,
+             vin: 'JH4KA7556PC018027',
+             make: '1993 Acura',
+             model: 'Legend',
+             mileage: 100900,
+             title: 'C K',
+             transmission: 'auto'
           },
           {
-            //  car_id: 3,
-             car_vin: '3G4AG54N9NS614902',
-             car_make: '1992 Buick',
-             car_model: 'Century',
-             car_mileage: 210000,
-             car_transmission: 'auto'
+            //  id: 3,
+             vin: '3G4AG54N9NS614902',
+             make: '1992 Buick',
+             model: 'Century',
+             mileage: 210000,
+             transmission: 'auto'
           },
        ]);
      });
